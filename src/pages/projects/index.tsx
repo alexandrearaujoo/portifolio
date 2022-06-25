@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Header from '../../components/Header';
 import ProjectCard from '../../components/ProjectCard';
 import { Container } from '../../styles/pages/Projects';
@@ -5,6 +6,9 @@ import { Container } from '../../styles/pages/Projects';
 const Projects = () => {
   return (
     <Container>
+      <Head>
+        <title>Projetos | Meu portfólio</title>
+      </Head>
       <Header />
 
       <main className="container">
