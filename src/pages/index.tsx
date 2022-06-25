@@ -1,3 +1,4 @@
+import Conhecimentos from '../components/Conhecimentos';
 import Header from '../components/Header';
 import HomeHero from '../components/HomeHero';
 import Projetos from '../components/Projetos';
@@ -11,6 +12,7 @@ export default function Home() {
       <main className="container">
         <HomeHero />
         <Projetos />
+        <Conhecimentos />
       </main>
     </HomeContainer>
   );
