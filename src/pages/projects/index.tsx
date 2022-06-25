@@ -1,6 +1,6 @@
-import Header from '../components/Header';
-import ProjectCard from '../components/ProjectCard';
-import { Container } from '../styles/pages/Projects';
+import Header from '../../components/Header';
+import ProjectCard from '../../components/ProjectCard';
+import { Container } from '../../styles/pages/Projects';
 
 const Projects = () => {
   return (
