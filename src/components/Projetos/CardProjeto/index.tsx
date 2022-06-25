@@ -20,7 +20,7 @@ const CardProjeto = ({ title, type, slug, img }: CardProps) => {
         </TextContainer>
       </section>
 
-      <Link href={`/projetos/${slug}`}>
+      <Link href={`/projects/${slug}`}>
         <a>
           Ver mais <AiOutlineRightCircle />
         </a>
