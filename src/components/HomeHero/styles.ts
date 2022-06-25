@@ -6,10 +6,10 @@ export const Container = styled.section`
   gap: 2rem;
   align-items: center;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 0.5rem;
 
   > img {
-    width: 40rem;
+    width: 35rem;
     flex: 1;
   }
 
@@ -46,7 +46,7 @@ export const TextContainer = styled.section`
   width: 100%;
 
   h1 {
-    font-size: 8rem;
+    font-size: 7rem;
     color: ${({ theme }) => theme.primary};
   }
 
@@ -58,19 +58,19 @@ export const TextContainer = styled.section`
 
   @media (max-width: 1450px) {
     h1 {
-      font-size: 5rem;
+      font-size: 2.5rem;
     }
     h2 {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
 
   @media (max-width: 1000px) {
     h1 {
-      font-size: 3rem;
+      font-size: 1.5rem;
     }
     h2 {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
   }
 `;
@@ -82,4 +82,47 @@ export const InfosContainer = styled.section`
   gap: 2rem;
 `;
 
+export const BoxItem = styled.pre`
+  background: ${({ theme }) => theme.gradient};
+  padding: 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+  color: #fff;
+  width: 24rem;
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+  transition: 1s !important;
 
+  @media (max-width: 1450px) {
+    width: 18rem;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+  }
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+  &:hover {
+    filter: brightness(1.2);
+  }
+  &:last-child {
+    align-self: flex-end;
+  }
+  > div {
+    margin: 0.2rem 0;
+    margin-left: 1rem;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+
+      color: ${({ theme }) => theme.text};
+      transition: 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        color: ${({ theme }) => theme.primary};
+      }
+    }
+  }
+`;

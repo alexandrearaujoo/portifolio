@@ -9,7 +9,7 @@ const Projetos = () => {
       <SectionTitle title="Ultimos Projetos" />
 
       <section>
-        <CardProjeto 
+        <CardProjeto
           title="Projeto 01"
           type="Website"
           slug="teste"
@@ -35,7 +35,7 @@ const Projetos = () => {
         />
       </section>
 
-      <Link href="/projetos">
+      <Link href="/projects">
         <a>Ver todos os projetos</a>
       </Link>
     </Container>

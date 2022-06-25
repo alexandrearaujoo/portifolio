@@ -9,12 +9,12 @@ export const Container = styled.section`
 
   h1 {
     color: ${({ theme }) => theme.primary};
-    font-size: 4.5rem;
+    font-size: 2.7rem;
   }
 
   h2 {
     color: ${({ theme }) => theme.secondary};
-    font-size: 3.5rem;
+    font-size: 1.5rem;
     font-weight: 300;
   }
 

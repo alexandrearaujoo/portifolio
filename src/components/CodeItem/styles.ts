@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 export const Container = styled.pre`
   background: ${({ theme }) => theme.gradient};
-  padding: 2rem;
+  padding: 1rem;
   font-family: 'JetBrains Mono', monospace;
   font-weight: 300;
   color: #fff;
-  width: 24rem;
+  width: 29rem;
   align-self: flex-start;
   transition: 1s !important;
+  white-space: normal;
 
   &:hover {
     filter: brightness(1.2);
@@ -38,8 +39,6 @@ export const Title = styled.span`
   display: block;
 `;
 
-export const Description = styled.p`
+export const Description = styled.span`
   color: #7ac7e3;
-  width: 120px;
-  word-wrap: break-word;
 `;
