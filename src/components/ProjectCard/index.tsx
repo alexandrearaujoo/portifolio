@@ -10,7 +10,7 @@ interface ProjectProps {
 
 const ProjectCard = ({title, type, slug, img}: ProjectProps) => {
   return (
-    <Container imgUrl={img}>
+    <Container imgUrl={img} data-aos='fade-up'>
       <Link href={`/projects/${slug}`}>
         <a>
           <Overlay />
