@@ -4,7 +4,7 @@ import CodeItem from '../CodeItem';
 
 const HomeHero = () => {
   return (
-    <Container>
+    <Container data-aos='fade-up'>
       <img src={picture} alt="Picture" />
 
       <div>

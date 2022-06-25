@@ -8,7 +8,7 @@ export const Container = styled.pre`
   color: #fff;
   width: 24rem;
   align-self: flex-start;
-  transition: 1s;
+  transition: 1s !important;
 
   &:hover {
     filter: brightness(1.2);
@@ -18,7 +18,7 @@ export const Container = styled.pre`
     margin: 0.2rem 0;
     margin-left: 1rem;
   }
-  
+
   @media (max-width: 1000px) {
     width: 100%;
   }

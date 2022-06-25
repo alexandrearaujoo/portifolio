@@ -11,7 +11,7 @@ interface CardProps {
 
 const CardProjeto = ({ title, type, slug, img }: CardProps) => {
   return (
-    <ProjetoContainer imgUrl={img}>
+    <ProjetoContainer imgUrl={img} data-aos='fade-up'>
       <section>
         <Overlay></Overlay>
         <TextContainer>

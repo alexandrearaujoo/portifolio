@@ -2,7 +2,7 @@ import { Container, SpanBlue, Description, SpanPurple, Title } from './styles';
 
 const CodeItem = () => {
   return (
-    <Container>
+    <Container data-aos='zoom-in'>
       <Title>//Minha apresentação </Title>
       <SpanPurple>Infos</SpanPurple> {'\u007b'}
       <div>

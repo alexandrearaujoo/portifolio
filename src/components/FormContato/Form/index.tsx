@@ -3,7 +3,7 @@ import { Container, Input, FormContainer, TextArea } from './styles';
 const Form = () => {
   return (
     <Container>
-      <FormContainer>
+      <FormContainer data-aos='fade-up'>
         <Input type="text" placeholder="Nome" />
         <Input type="email" placeholder="Email" />
         <TextArea placeholder="Mensagem" />

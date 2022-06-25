@@ -8,7 +8,7 @@ interface CardProps {
 
 const CardConhecimento = ({title, icon}: CardProps) => {
   return (
-    <Container>
+    <Container data-aos='fade-up'>
       <p>{title}</p>
       {icon}
     </Container>

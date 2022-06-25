@@ -9,7 +9,7 @@ const Projetos = () => {
       <SectionTitle title="Ultimos Projetos" />
 
       <section>
-        <CardProjeto
+        <CardProjeto 
           title="Projeto 01"
           type="Website"
           slug="teste"

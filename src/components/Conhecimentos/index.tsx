@@ -22,7 +22,7 @@ const Conhecimentos = () => {
         <CardConhecimento title="NextJS" icon={<TbBrandNextjs />} />
         <CardConhecimento title="PostgreSQL" icon={<SiPostgresql />} />
         <CardConhecimento title="NodeJS" icon={<DiNodejs />} />
-        <CardConhecimento title="NodeJS" icon={<SiPython />} />
+        <CardConhecimento title="Python" icon={<SiPython />} />
       </div>
     </Container>
   );
