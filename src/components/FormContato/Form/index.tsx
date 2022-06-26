@@ -1,30 +1,58 @@
-import { useState } from 'react';
 import { Container, Input, FormContainer, TextArea } from './styles';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { sendContactMail } from '../../../services/sendMail';
+
+interface SendMailProps {
+  name: string;
+  senderMail: string;
+  content: string;
+}
 
 const Form = () => {
-  const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
+  const contactSchema = yup.object().shape({
+    name: yup
+      .string()
+      .min(2, 'Minimo de 2 caracteres')
+      .required('Campo obrigatório'),
+    senderMail: yup
+      .string()
+      .email('Email inválido')
+      .required('Campo obrigatório'),
+    content: yup.string().required('Campo obrigatório')
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm({
+    resolver: yupResolver(contactSchema)
+  });
+
+  const onSubmit = (data: SendMailProps) => {
+    sendContactMail(data);
+    reset();
+  };
 
   return (
     <Container>
-      <FormContainer data-aos="fade-up">
+      <FormContainer data-aos="fade-up" onSubmit={handleSubmit(onSubmit)}>
         <Input
           type="text"
-          placeholder="Nome"
-          value={name}
-          onChange={({ target }) => setName(target.value)}
+          placeholder={errors.name?.message.toString() || 'Nome'}
+          {...register('name')}
         />
         <Input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={({ target }) => setEmail(target.value)}
+          type='text'
+          placeholder={errors.senderMail?.message.toString() || 'Email'}
+          {...register('senderMail')}
         />
         <TextArea
-          placeholder="Mensagem"
-          value={message}
-          onChange={({ target }) => setMessage(target.value)}
+          placeholder={errors.content?.message.toString() || 'Mensagem'}
+          {...register('content')}
         />
         <button type="submit">Enviar</button>
       </FormContainer>
