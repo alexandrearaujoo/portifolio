@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { sendContactMail } from '../../../services/sendMail';
+import toast from 'react-hot-toast';
 
 interface SendMailProps {
   name: string;
@@ -32,9 +33,14 @@ const Form = () => {
     resolver: yupResolver(contactSchema)
   });
 
-  const onSubmit = (data: SendMailProps) => {
-    sendContactMail(data);
-    reset();
+  const onSubmit = async (data: SendMailProps) => {
+    try {
+      await sendContactMail(data);
+      toast.success('Mensagem enviada');
+      reset();
+    } catch (error) {
+      toast.error('Ocorreu um erro ao enviar sua mensagem. Tente novamente!');
+    }
   };
 
   return (
@@ -46,7 +52,7 @@ const Form = () => {
           {...register('name')}
         />
         <Input
-          type='text'
+          type="text"
           placeholder={errors.senderMail?.message.toString() || 'Email'}
           {...register('senderMail')}
         />
