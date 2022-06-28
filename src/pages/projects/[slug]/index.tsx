@@ -1,23 +1,41 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import BannerProject from '../../../components/BannerProject';
 import Header from '../../../components/Header';
 import { Container } from '../../../styles/pages/SingleProject';
+import { projects } from '../../../database/projects';
+import Head from 'next/head';
 
 const SingleProject = () => {
+
+  const { query } = useRouter();
+
+  const project = projects.find(({ slug }) => slug == query.slug);
+
+  if (!project) {
+    return (
+      <div>
+        404 Page not found
+      </div>
+    )
+  }
+
   return (
     <Container>
+      <Head>
+        <title>{project.title}</title>
+      </Head>
       <Header />
-      <BannerProject title='Projeto 01' type='Website' img='https://static3.tcdn.com.br/img/img_prod/460977/teste_100485_1_cbc226c7d23a19c784fb4752ffe61337.png'/>
+      <BannerProject
+        title={project.title}
+        type={project.type}
+        img={project.img}
+      />
 
       <main>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium
-          numquam rerum iure illum corporis rem assumenda hic quisquam totam!
-          Tenetur ipsam modi, molestiae dignissimos natus omnis tempora
-          recusandae delectus voluptas?
-        </p>
-        <Link href="#">
-          <a target='blank'>Ver projeto online</a>
+        <p>{project.description}</p>
+        <Link href={project.link}>
+          <a target="blank">Ver projeto online</a>
         </Link>
       </main>
     </Container>

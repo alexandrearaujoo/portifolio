@@ -3,36 +3,30 @@ import SectionTitle from '../SectionTitle';
 import CardProjeto from './CardProjeto';
 import { Container } from './styles';
 
-const Projetos = () => {
+interface IProject {
+  data :{
+    id: number
+    slug: string
+    title: string
+    type: string
+    description: string
+    img: string
+    link: string
+  }[]
+}
+
+
+const Projetos = (data: IProject) => {
+  const projects = data.data.slice(0,3)
+
   return (
     <Container>
-      <SectionTitle title="Ultimos Projetos" />
+      <SectionTitle title="Projetos" />
 
       <section>
-        <CardProjeto
-          title="Projeto 01"
-          type="Website"
-          slug="teste"
-          img="https://static3.tcdn.com.br/img/img_prod/460977/teste_100485_1_cbc226c7d23a19c784fb4752ffe61337.png"
-        />
-        <CardProjeto
-          title="Projeto 02"
-          type="Website"
-          slug="teste"
-          img="https://static3.tcdn.com.br/img/img_prod/460977/teste_100485_1_cbc226c7d23a19c784fb4752ffe61337.png"
-        />
-        <CardProjeto
-          title="Projeto 03"
-          type="Website"
-          slug="teste"
-          img="https://static3.tcdn.com.br/img/img_prod/460977/teste_100485_1_cbc226c7d23a19c784fb4752ffe61337.png"
-        />
-        <CardProjeto
-          title="Projeto 04"
-          type="Website"
-          slug="teste"
-          img="https://static3.tcdn.com.br/img/img_prod/460977/teste_100485_1_cbc226c7d23a19c784fb4752ffe61337.png"
-        />
+        {projects.map(({title, type, slug, img, id}) =>
+          <CardProjeto key={id} title={title} type={type} slug={slug} img={img}/>
+        )}
       </section>
 
       <Link href="/projects">

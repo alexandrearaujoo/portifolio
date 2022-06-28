@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Header from '../../components/Header';
 import ProjectCard from '../../components/ProjectCard';
 import { Container } from '../../styles/pages/Projects';
+import { projects } from '../../database/projects';
 
 const Projects = () => {
   return (
@@ -12,30 +13,9 @@ const Projects = () => {
       <Header />
 
       <main className="container">
-        <ProjectCard
-          title="Projeto 01"
-          type="Website"
-          slug="teste"
-          img="https://static3.tcdn.com.br/img/img_prod/460977/teste_100485_1_cbc226c7d23a19c784fb4752ffe61337.png"
-        />
-        <ProjectCard
-          title="Projeto 02"
-          type="Website"
-          slug="teste"
-          img="https://static3.tcdn.com.br/img/img_prod/460977/teste_100485_1_cbc226c7d23a19c784fb4752ffe61337.png"
-        />
-        <ProjectCard
-          title="Projeto 03"
-          type="Website"
-          slug="teste"
-          img="https://static3.tcdn.com.br/img/img_prod/460977/teste_100485_1_cbc226c7d23a19c784fb4752ffe61337.png"
-        />
-        <ProjectCard
-          title="Projeto 04"
-          type="Website"
-          slug="teste"
-          img="https://static3.tcdn.com.br/img/img_prod/460977/teste_100485_1_cbc226c7d23a19c784fb4752ffe61337.png"
-        />
+        {projects.map(({title, type, slug, img, id}) =>
+          <ProjectCard key={id} title={title} type={type} slug={slug} img={img}/>
+        )}
       </main>
     </Container>
   );

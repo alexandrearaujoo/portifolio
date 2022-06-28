@@ -29,7 +29,7 @@ export const Container = styled.div`
       border: none;
       transition: 0.5s;
       margin-top: 2rem;
-      color: #fff;
+      color: #000;
       text-transform: uppercase;
       font-size: 1.3rem;
       font-weight: 300;

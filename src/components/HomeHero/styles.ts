@@ -112,15 +112,28 @@ export const BoxItem = styled.pre`
     margin: 0.2rem 0;
     margin-left: 1rem;
 
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 8rem;
+      transition: 0.5s;
+      color: ${({ theme }) => theme.text};
+    }
+
     svg {
       width: 2rem;
       height: 2rem;
+      margin-left: 1rem;
 
       color: ${({ theme }) => theme.text};
       transition: 0.5s;
       cursor: pointer;
+    }
 
-      &:hover {
+    &:hover {
+      a,
+      svg {
         color: ${({ theme }) => theme.primary};
       }
     }

@@ -1,5 +1,5 @@
 import { AiFillHtml5 } from 'react-icons/ai';
-import { SiTypescript, SiPostgresql, SiPython } from 'react-icons/si';
+import { SiTypescript, SiPostgresql, SiPython, SiDjango } from 'react-icons/si';
 import { DiNodejs } from 'react-icons/di';
 import { TbBrandNextjs } from 'react-icons/tb';
 import { FaCss3Alt, FaReact } from 'react-icons/fa';
@@ -23,6 +23,7 @@ const Conhecimentos = () => {
         <CardConhecimento title="PostgreSQL" icon={<SiPostgresql />} />
         <CardConhecimento title="NodeJS" icon={<DiNodejs />} />
         <CardConhecimento title="Python" icon={<SiPython />} />
+        <CardConhecimento title="Django" icon={<SiDjango />} />
       </div>
     </Container>
   );

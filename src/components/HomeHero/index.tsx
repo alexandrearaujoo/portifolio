@@ -11,8 +11,8 @@ const HomeHero = () => {
 
       <div>
         <TextContainer>
-          <h1>Olá</h1>
-          <h2>Me chamo Alexandre</h2>
+          <h1>Alexandre Araujo</h1>
+          <h2>Desenvolvedor Front-end Jr</h2>
         </TextContainer>
         <InfosContainer>
           <CodeItem />
@@ -20,6 +20,7 @@ const HomeHero = () => {
             <div>
               <Link href="https://github.com/alexandrearaujoo">
                 <a target="blank">
+                  Github
                   <AiOutlineGithub />
                 </a>
               </Link>
@@ -27,6 +28,7 @@ const HomeHero = () => {
             <div>
               <Link href="https://www.linkedin.com/in/alexandrearaujoo/">
                 <a target="blank">
+                  Linkedin
                   <AiFillLinkedin />
                 </a>
               </Link>

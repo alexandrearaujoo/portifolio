@@ -26,7 +26,7 @@ export const Container = styled.section`
     border: none;
     transition: 0.5s;
     text-transform: uppercase;
-    color: #fff;
+    color: #000;
     font-size: 1.5rem;
     font-weight: 300;
 
