@@ -5,6 +5,7 @@ import Header from '../../../components/Header';
 import { Container } from '../../../styles/pages/SingleProject';
 import { projects } from '../../../database/projects';
 import Head from 'next/head';
+import PageError from '../../../components/PageError';
 
 const SingleProject = () => {
 
@@ -14,9 +15,7 @@ const SingleProject = () => {
 
   if (!project) {
     return (
-      <div>
-        404 Page not found
-      </div>
+      <PageError />
     )
   }
 
