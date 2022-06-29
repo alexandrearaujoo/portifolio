@@ -6,7 +6,8 @@ import GlobalStyles from '../styles/global';
 import theme from '../styles/theme';
 
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
+
   return (
     <ThemeProvider theme={theme}>
       <NextNProgress
