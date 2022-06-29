@@ -1,26 +1,40 @@
 import Document, {
-  Html,
+  DocumentInitialProps,
   Head,
+  Html,
   Main,
-  NextScript,
-  DocumentContext,
-  DocumentInitialProps
+  NextScript
 } from 'next/document';
 
-class MyDocument extends Document {
+import { ServerStyleSheet } from 'styled-components';
+
+
+export default class MyDocument extends Document {
   static async getInitialProps(
-    ctx: DocumentContext
+    ctx: any
   ): Promise<DocumentInitialProps> {
+    const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
-    ctx.renderPage = () =>
-      originalRenderPage({
-        enhanceApp: App => App,
-        enhanceComponent: Component => Component
-      });
-    const initialProps = await Document.getInitialProps(ctx);
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+        });
 
-    return initialProps;
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        )
+      };
+    } finally {
+      sheet.seal();
+    }
   }
 
   render() {
@@ -33,11 +47,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&family=Montserrat:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
-          <link
-            rel="icon"
-            href="https://i.postimg.cc/T2Hm0NRk/hacker.gif"
-            type="image / gif"
-          />
+
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         </Head>
@@ -49,5 +59,3 @@ class MyDocument extends Document {
     );
   }
 }
-
-export default MyDocument;
