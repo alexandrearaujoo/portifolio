@@ -1,5 +1,5 @@
 import { Container, TextContainer, InfosContainer, BoxItem } from './styles';
-import picture from '../../assets/my-picture.webp';
+import gifHello from '../../assets/robot.gif';
 import CodeItem from '../CodeItem';
 import { AiFillLinkedin, AiOutlineGithub } from 'react-icons/ai';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import Link from 'next/link';
 const HomeHero = () => {
   return (
     <Container data-aos="fade-up">
-      <img src={picture} alt="Picture" />
+      <img src={gifHello} alt="Hello" />
 
       <div>
         <TextContainer>

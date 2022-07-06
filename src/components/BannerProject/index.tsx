@@ -10,7 +10,7 @@ const BannerProject = ({title, type, img} :BannerProps) => {
   return (
     <Container imgUrl={img}>
       <Overlay />
-
+      saudações
       <section>
         <h1>{title}</h1>
         <h2>{type}</h2>
