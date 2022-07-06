@@ -1,9 +1,15 @@
-import PageError from "../components/PageError"
+import Head from 'next/head';
+import PageError from '../components/PageError';
 
 const Page404 = () => {
   return (
-    <PageError />
-  )
-}
+    <>
+      <Head>
+        <title>Page not found</title>
+      </Head>
+      <PageError />
+    </>
+  );
+};
 
-export default Page404
+export default Page404;

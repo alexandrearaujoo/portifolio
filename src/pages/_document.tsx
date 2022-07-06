@@ -8,11 +8,8 @@ import Document, {
 
 import { ServerStyleSheet } from 'styled-components';
 
-
 export default class MyDocument extends Document {
-  static async getInitialProps(
-    ctx: any
-  ): Promise<DocumentInitialProps> {
+  static async getInitialProps(ctx: any): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
@@ -47,7 +44,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&family=Montserrat:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
-
+          <link
+            href="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/344/external-hacker-cryptocurrency-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png"
+            rel="icon"
+          />
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         </Head>
