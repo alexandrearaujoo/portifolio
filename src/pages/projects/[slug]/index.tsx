@@ -8,15 +8,12 @@ import Head from 'next/head';
 import PageError from '../../../components/PageError';
 
 const SingleProject = () => {
-
   const { query } = useRouter();
 
   const project = projects.find(({ slug }) => slug == query.slug);
 
   if (!project) {
-    return (
-      <PageError />
-    )
+    return <PageError />;
   }
 
   return (
@@ -33,9 +30,14 @@ const SingleProject = () => {
 
       <main>
         <p>{project.description}</p>
-        <Link href={project.link}>
-          <a target="blank">Ver projeto online</a>
-        </Link>
+        <div>
+          <Link href={project.link}>
+            <a target="blank">Ver projeto online</a>
+          </Link>
+          <Link href={project.github}>
+            <a target="blank">Ver repositório</a>
+          </Link>
+        </div>
       </main>
     </Container>
   );

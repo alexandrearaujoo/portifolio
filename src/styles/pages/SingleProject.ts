@@ -15,6 +15,12 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
 
+    > div {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
     p {
       color: ${({theme}) => theme.textHighlight};
       font-size: 1.5rem;
@@ -24,14 +30,14 @@ export const Container = styled.div`
 
     a {
       background: ${({theme}) => theme.primary};
-      padding: 0.8rem 3rem;
+      padding: 0.8rem 1.2rem;
       border-radius: 0.5rem;
       border: none;
       transition: 0.5s;
       margin-top: 2rem;
       color: #000;
       text-transform: uppercase;
-      font-size: 1.3rem;
+      font-size: 1rem;
       font-weight: 300;
       width: fit-content;
 
@@ -51,6 +57,19 @@ export const Container = styled.div`
     a {
       padding: 0.7rem 2rem;
       font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 450px) {
+    > main {
+      width: 100%;
+      padding: 0;
+      align-items: center;
+
+      p {
+        text-align: justify;
+        font-size: 1rem;
+      }
     }
   }
 
